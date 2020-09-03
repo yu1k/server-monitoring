@@ -15,6 +15,7 @@ module.exports = (robot) => {
             exec("ping -c 1 targetAddress", (err, stdout , stderr) => {
 
                 //この処理だとpingのパケットロスではなく、シェルのエラーを拾う処理なのでコードを改善したい
+                //pingのログに出たパケットロス100%などの文字列を比較して判定するのも良さそう
                 if(err){
                     robot.messageRoom("bot-test", targetAddress + " が落ちてます");
                 }
