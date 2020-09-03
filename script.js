@@ -11,8 +11,10 @@ const exec = require('child_process').exec; //コマンド実行用
 module.exports = (robot) => {
 
     function serverMonitoring(){
-        cron.schedule("* * * * * *", () => {
+        cron.schedule("* * * * *", () => {
             exec("ping -c 1 targetAddress", (err, stdout , stderr) => {
+
+                //この処理だとpingのパケットロスではなく、シェルのエラーを拾う処理なのでコードを改善したい
                 if(err){
                     robot.messageRoom("bot-test", targetAddress + " が落ちてます");
                 }
