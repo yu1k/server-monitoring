@@ -5,6 +5,8 @@ const cron = require("node-cron");
 
 const SlackChannelID = ""; ///動かす時に入力
 
+const targetAddress = ["IPアドレス"];
+
 function serverMonitoring(){
 }
 
