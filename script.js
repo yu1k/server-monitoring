@@ -64,8 +64,8 @@ function serverMonitoring(){
     });
 }
 
-// 2分毎に `serverMonitoring();` を実行
-cron.schedule("0 */2 * * * *", () => {
+// 30分毎に `serverMonitoring();` を実行
+cron.schedule("* */30 * * * *", () => {
     serverMonitoring();
 });
 
