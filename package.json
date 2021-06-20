@@ -1,0 +1,8 @@
+{
+  "name": "server-monitoring",
+  "version": "1.0.0",
+  "main": "script.js",
+  "repository": "git@github.com:yu1k/server-monitoring.git",
+  "author": "yu1k <48705423+yu1k@users.noreply.github.com>",
+  "license": "MIT"
+}
