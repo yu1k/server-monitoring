@@ -55,10 +55,10 @@ function serverMonitoring(){
         ping.sys.probe(host, function(isAlive){
             if(!isAlive){
                 sendSlack(host);
-                console.log('host ' + host + ' is dead');
+                console.log("Host: " + host + " is dead");
             }
             else{
-                console.log('host ' + host + ' is alive');
+                console.log("Host: " + host + " is alive");
             }
         });
     });
