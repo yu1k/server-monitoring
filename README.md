@@ -2,7 +2,7 @@
 
 ## 環境
 
-Docker Desctop
+Docker Desktop
 
 Node.js v14.15.4
 
