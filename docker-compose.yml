@@ -5,3 +5,4 @@ services:
     tty: true
     volumes:
       - .:/server-monitoring
+      - /server-monitoring/node_modules
