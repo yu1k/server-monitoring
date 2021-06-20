@@ -8,9 +8,9 @@ const targetAddress = [""];
 
 // Slackの投稿メッセージ
 let sendMessageData = JSON.stringify({
-    "username":"サーバ監視くん",
+    "username": "サーバ監視くん",
     "text": "サーバが落ちています。対象のホストを確認してください。",
-    "icon_emoji":":envelope_with_arrow:"
+    "icon_emoji": ":envelope_with_arrow:"
 });
 
 // Slack Webhook情報の設定
