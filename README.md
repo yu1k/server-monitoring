@@ -13,7 +13,7 @@ $ git clone git@github.com:yu1k/server-monitoring.git
 $ cd ./server-monitoring
 ```
 
-GitHub からリポジトリをcloneし、cd でディレクトリに移動する
+以上のコマンドで GitHub からリポジトリをcloneし、cd でディレクトリに移動する
 
 1. アラートを投げたい Slackワークスペース にてWebhookインテグレーションを作成する
 2. `./script.js` の 8行目  に監視対象のホストを入力する
