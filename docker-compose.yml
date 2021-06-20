@@ -1,0 +1,7 @@
+version: '3'
+services:
+  alive-monitoring-app:
+    build: .
+    tty: true
+    volumes:
+      - .:/server-monitoring
