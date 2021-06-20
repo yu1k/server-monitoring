@@ -4,5 +4,8 @@
   "main": "script.js",
   "repository": "git@github.com:yu1k/server-monitoring.git",
   "author": "yu1k <48705423+yu1k@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ping": "^0.4.1"
+  }
 }
