@@ -1,5 +1,7 @@
 # server-monitoring
 
+サーバを死活監視してくれる bot アプリケーション
+
 ## 環境
 
 Docker Desktop
