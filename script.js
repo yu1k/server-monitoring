@@ -1,31 +1,43 @@
 "use strict";
 
-const ping = require("ping");
+//const ping = require("ping");
 const https = require("https");
-const cron = require("node-cron");
 
-const SlackChannelID = ""; ///動かす時に入力
+// 監視対象サーバのホストを設定
+const targetAddress = [""];
 
-const targetAddress = ["IPアドレス"];
+// Slackの投稿メッセージ
+let sendMessageData = JSON.stringify({
+    "username":"サーバ監視くん",
+    "text": "サーバが落ちています。対象のホストを確認してください。",
+    "icon_emoji":":envelope_with_arrow:"
+});
 
-//targetAddress で指定したホストに対して、pingを飛ばしてホストが生きていかを確認する処理
-function serverMonitoring(){
-    let msg = null;
-    targetAddress.forEach(function(targetAddress){
-        ping.sys.probe(targetAddress, function(isAlive){
-            if(!isAlive){
-                msg = "host: " + targetAddress + " is dead.";
-                console.log(msg);
-                return;
-            }
-            msg = "host: " + targetAddress + " is alive.";
-            console.log(msg);
-        });
-    });
-}
+// Slack Webhook情報の設定
+let options = {
+    hostname: "hooks.slack.com",
+    port: 443,
+    path: "",
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "Content-Length": Buffer.byteLength(sendMessageData)
+    }
+};
+// リクエストを投げる
+let req = https.request(options, (res) =>{
+    if(res.statusCode === 200){
+        console.log("OK: " + res.statusCode);
+    }
+    else{
+        console.log("Status Error: " + res.statusCode);
+    }
+});
 
-function main() {
-    serverMonitoring();
-    console.log("Start job.");
-}
-main();
+// エラー
+req.on("error", (err) => {
+    console.error(err);
+});
+
+req.write(sendMessageData);
+req.end();
