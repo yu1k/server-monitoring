@@ -5,7 +5,11 @@
   "repository": "git@github.com:yu1k/server-monitoring.git",
   "author": "yu1k <48705423+yu1k@users.noreply.github.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node script.js"
+  },
   "dependencies": {
+    "node-cron": "^3.0.0",
     "ping": "^0.4.1"
   }
 }
